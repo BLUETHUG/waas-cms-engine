@@ -1,0 +1,66 @@
+name: CI — Test Every Push
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  test-backend:
+    name: Tests (81 suites)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: |
+            server/package-lock.json
+            infrastructure/package-lock.json
+            frontend/package-lock.json
+
+      - name: Install server dependencies
+        working-directory: ./server
+        run: npm ci
+
+      - name: Install infrastructure dependencies
+        working-directory: ./infrastructure
+        run: npm ci
+
+      - name: Install frontend dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: ./frontend
+        run: npm run build
+
+      - name: Seed database
+        working-directory: ./server
+        run: node seed.js
+
+      - name: Test RLS isolation
+        run: python tests/test_rls_isolation.py
+
+      - name: Test infrastructure layer
+        working-directory: ./tests
+        run: node --test test_infrastructure.mjs
+
+      - name: Test UI engine
+        working-directory: ./tests
+        run: node --test test_ui_engine.mjs
+
+      - name: Start server & API smoke test
+        working-directory: ./server
+        run: |
+          node index.js &
+          SERVER_PID=$!
+          sleep 3
+          curl -s http://localhost:3000/api/health
+          curl -s http://localhost:3000/api/tenants
+          kill $SERVER_PID
