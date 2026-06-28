@@ -1,0 +1,163 @@
+[
+  {
+    "slot_key": "nav-bar",
+    "component_type": "nav-bar",
+    "data": {
+      "logo_text": "Greenwood Academy",
+      "logo_url": "/",
+      "menu_items": [
+        { "label": "About Us", "url": "/about" },
+        { "label": "Academics", "url": "/academics" },
+        { "label": "Events", "url": "/events" },
+        { "label": "Documents", "url": "/documents" },
+        { "label": "Contact", "url": "/contact" }
+      ],
+      "cta_text": "Apply Now",
+      "cta_url": "/apply"
+    }
+  },
+  {
+    "slot_key": "notification-banner",
+    "component_type": "notification-banner",
+    "data": {
+      "message": "Summer school registration is now open! Early bird discounts available until July 15th.",
+      "type": "info",
+      "dismissible": true
+    }
+  },
+  {
+    "slot_key": "hero",
+    "component_type": "hero",
+    "data": {
+      "heading": "Welcome to Greenwood Academy",
+      "subheading": "Empowering students to achieve academic excellence and personal growth since 1985.",
+      "cta_text": "Schedule a Visit",
+      "cta_url": "/visit"
+    }
+  },
+  {
+    "slot_key": "about-section",
+    "component_type": "about-section",
+    "data": {
+      "title": "About Greenwood Academy",
+      "body": "Greenwood Academy is a private K-12 school located in the heart of the community. With a dedicated faculty of 120 educators, we provide a comprehensive curriculum that emphasizes critical thinking, creativity, and character development. Our state-of-the-art facilities include science laboratories, a performing arts center, and a full athletic complex. We believe in nurturing the whole student — academically, socially, and emotionally.",
+      "image": "/images/about-campus.jpg"
+    }
+  },
+  {
+    "slot_key": "event-calendar",
+    "component_type": "event-calendar",
+    "data": {
+      "title": "Upcoming Events",
+      "events": [
+        {
+          "date": "2026-07-10",
+          "title": "Summer Camp – Week 1",
+          "description": "Our annual summer camp kicks off with outdoor activities, arts & crafts, and team-building exercises.",
+          "time": "8:00 AM – 3:00 PM",
+          "location": "Main Campus"
+        },
+        {
+          "date": "2026-07-18",
+          "title": "Parent-Teacher Conference",
+          "description": "Semi-annual parent-teacher meetings to discuss student progress and academic planning.",
+          "time": "4:00 PM – 7:00 PM",
+          "location": "Auditorium"
+        },
+        {
+          "date": "2026-08-01",
+          "title": "Fall Semester Begins",
+          "description": "First day of the 2026-2027 academic year. Students report to homeroom by 8:00 AM.",
+          "time": "7:45 AM – 3:00 PM",
+          "location": "All Campuses"
+        },
+        {
+          "date": "2026-08-15",
+          "title": "Back-to-School Night",
+          "description": "Meet your child's teachers and learn about the curriculum for the upcoming year.",
+          "time": "6:00 PM – 8:30 PM",
+          "location": "Gymnasium"
+        }
+      ]
+    }
+  },
+  {
+    "slot_key": "documents-list",
+    "component_type": "documents-list",
+    "data": {
+      "title": "School Documents & Forms",
+      "documents": [
+        {
+          "title": "2026-2027 Academic Calendar",
+          "file_url": "/documents/academic-calendar-2026-2027.pdf",
+          "file_type": "PDF",
+          "uploaded_at": "June 15, 2026",
+          "description": "Complete calendar including holidays, exam periods, and school events."
+        },
+        {
+          "title": "Student Handbook",
+          "file_url": "/documents/student-handbook.pdf",
+          "file_type": "PDF",
+          "uploaded_at": "June 1, 2026",
+          "description": "Policies, procedures, and code of conduct for all students."
+        },
+        {
+          "title": "Enrollment Application Form",
+          "file_url": "/documents/enrollment-form.pdf",
+          "file_type": "PDF",
+          "uploaded_at": "May 20, 2026",
+          "description": "Required for new student enrollment. Submit with supporting documents."
+        },
+        {
+          "title": "Lunch Menu – July 2026",
+          "file_url": "/documents/lunch-menu-july.pdf",
+          "file_type": "PDF",
+          "uploaded_at": "June 28, 2026",
+          "description": "Weekly lunch menus with nutritional information."
+        }
+      ]
+    }
+  },
+  {
+    "slot_key": "footer",
+    "component_type": "footer",
+    "data": {
+      "columns": [
+        {
+          "title": "Quick Links",
+          "links": [
+            { "label": "About Us", "url": "/about" },
+            { "label": "Faculty & Staff", "url": "/faculty" },
+            { "label": "Calendar", "url": "/events" },
+            { "label": "Newsletter", "url": "/newsletter" }
+          ]
+        },
+        {
+          "title": "Academics",
+          "links": [
+            { "label": "Elementary (K-5)", "url": "/elementary" },
+            { "label": "Middle School (6-8)", "url": "/middle-school" },
+            { "label": "High School (9-12)", "url": "/high-school" },
+            { "label": "Advanced Placement", "url": "/ap-courses" }
+          ]
+        },
+        {
+          "title": "Contact",
+          "links": [
+            { "label": "123 Education Lane", "url": "#" },
+            { "label": "Springfield, IL 62701", "url": "#" },
+            { "label": "(555) 123-4567", "url": "tel:+15551234567" },
+            { "label": "info@greenwoodacademy.edu", "url": "mailto:info@greenwoodacademy.edu" }
+          ]
+        }
+      ],
+      "social_links": [
+        { "label": "Facebook", "url": "https://facebook.com/greenwoodacademy", "icon": "FB" },
+        { "label": "Twitter", "url": "https://twitter.com/greenwoodacad", "icon": "TW" },
+        { "label": "Instagram", "url": "https://instagram.com/greenwoodacademy", "icon": "IG" },
+        { "label": "LinkedIn", "url": "https://linkedin.com/school/greenwood-academy", "icon": "LI" }
+      ],
+      "copyright": "2026 Greenwood Academy. All rights reserved."
+    }
+  }
+]

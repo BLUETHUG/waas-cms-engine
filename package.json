@@ -1,0 +1,31 @@
+{
+  "name": "waas-cms-engine",
+  "version": "1.0.0",
+  "description": "Production-grade Multi-Tenant Website-as-a-Service CMS Engine",
+  "private": true,
+  "scripts": {
+    "test:db": "python tests/test_rls_isolation.py",
+    "test:infra": "node --test tests/test_infrastructure.mjs",
+    "test:ui": "node --test tests/test_ui_engine.mjs",
+    "test:all": "npm run test:db && npm run test:infra && npm run test:ui",
+    "test": "npm run test:all"
+  },
+  "keywords": [
+    "waas",
+    "multi-tenant",
+    "cms",
+    "rls",
+    "cloudflare"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.18.1",
+    "express": "^5.2.1"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://waas-cms.example.com/schemas/school-schema.json",
+  "title": "School Template Schema",
+  "description": "Layout configuration schema for school tenant websites in the WaaS CMS.",
+  "type": "object",
+  "required": ["layout"],
+  "properties": {
+    "layout": {
+      "type": "array",
+      "description": "Ordered array of page sections (slots).",
+      "items": {
+        "type": "object",
+        "required": ["slot_key", "component_type"],
+        "properties": {
+          "slot_key": {
+            "type": "string",
+            "description": "Unique key identifying the slot/region on the page."
+          },
+          "component_type": {
+            "type": "string",
+            "description": "Registered component type in the UI Engine registry.",
+            "enum": [
+              "hero",
+              "nav-bar",
+              "notification-banner",
+              "about-section",
+              "services-grid",
+              "event-calendar",
+              "contact-form",
+              "documents-list",
+              "footer"
+            ]
+          },
+          "data": {
+            "type": "object",
+            "description": "Component-specific data payload."
+          }
+        }
+      }
+    },
+    "template": {
+      "type": "string",
+      "const": "school",
+      "description": "Template identifier."
+    }
+  },
+  "allOf": [
+    {
+      "description": "Required slots for school template",
+      "if": {
+        "properties": { "template": { "const": "school" } }
+      },
+      "then": {
+        "properties": {
+          "layout": {
+            "contains": {
+              "properties": { "component_type": { "const": "hero" } }
+            }
+          }
+        },
+        "required": ["layout"]
+      }
+    }
+  ],
+  "definitions": {
+    "schoolSlots": {
+      "description": "Slot type definitions with school-specific validation rules.",
+      "notification-banner": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["info", "warning", "alert", "success"],
+                "description": "Notification type limited to enum values."
+              },
+              "message": { "type": "string" },
+              "dismissible": { "type": "boolean" }
+            },
+            "required": ["message", "type"]
+          }
+        }
+      },
+      "event-calendar": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string",
+                      "format": "date",
+                      "description": "ISO 8601 date format (YYYY-MM-DD)."
+                    },
+                    "title": { "type": "string" },
+                    "description": { "type": "string" },
+                    "time": { "type": "string" },
+                    "location": { "type": "string" },
+                    "link": { "type": "string", "format": "uri" }
+                  },
+                  "required": ["date", "title", "description", "time", "location"]
+                }
+              },
+              "title": { "type": "string" }
+            },
+            "required": ["events"]
+          }
+        }
+      },
+      "documents-list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "documents": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "file_url": {
+                      "type": "string",
+                      "description": "Document file URL — should end in .pdf for school documents."
+                    },
+                    "title": { "type": "string" },
+                    "file_type": { "type": "string" },
+                    "uploaded_at": { "type": "string" },
+                    "description": { "type": "string" }
+                  },
+                  "required": ["title", "file_url", "file_type"]
+                }
+              },
+              "title": { "type": "string" }
+            },
+            "required": ["documents"]
+          }
+        }
+      }
+    }
+  }
+}

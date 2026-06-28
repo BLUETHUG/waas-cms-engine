@@ -1,0 +1,141 @@
+[
+  {
+    "slot_key": "nav-bar",
+    "component_type": "nav-bar",
+    "data": {
+      "logo_text": "Café Riverside",
+      "logo_url": "/",
+      "menu_items": [
+        { "label": "Menu", "url": "/menu" },
+        { "label": "About", "url": "/about" },
+        { "label": "Hours", "url": "/hours" },
+        { "label": "Contact", "url": "/contact" }
+      ],
+      "cta_text": "Order Online",
+      "cta_url": "/order"
+    }
+  },
+  {
+    "slot_key": "hero",
+    "component_type": "hero",
+    "data": {
+      "heading": "Café Riverside",
+      "subheading": "Fresh, locally-sourced coffee and pastries by the river. Open daily from 6 AM.",
+      "cta_text": "View Our Menu",
+      "cta_url": "/menu"
+    }
+  },
+  {
+    "slot_key": "about-section",
+    "component_type": "about-section",
+    "data": {
+      "title": "Our Story",
+      "body": "Founded in 2018, Café Riverside started as a small pop-up stand and grew into a beloved community gathering spot. We roast our own beans, bake fresh pastries every morning, and source ingredients from local farms within 50 miles. Our riverside patio is the perfect place to enjoy a handcrafted latte while watching the sunset. We're committed to sustainability — all our cups are compostable and we donate day-old goods to local shelters.",
+      "image": "/images/cafe-interior.jpg"
+    }
+  },
+  {
+    "slot_key": "services-grid",
+    "component_type": "services-grid",
+    "data": {
+      "title": "Our Offerings",
+      "services": [
+        {
+          "title": "Artisan Coffee",
+          "description": "Single-origin espresso, pour-overs, cold brew, and seasonal specialties crafted by our barista team.",
+          "icon": "☕",
+          "price": "$3.50+"
+        },
+        {
+          "title": "Fresh Pastries",
+          "description": "Croissants, muffins, scones, and cakes baked in-house every morning using organic ingredients.",
+          "icon": "🥐",
+          "price": "$2.50+"
+        },
+        {
+          "title": "Light Bites",
+          "description": "Sandwiches, salads, and grain bowls made to order with locally-sourced produce and artisan breads.",
+          "icon": "🥗",
+          "price": "$8.00+"
+        },
+        {
+          "title": "Catering",
+          "description": "Coffee catering for events, corporate meetings, and private parties. Custom menus available.",
+          "icon": "🎉",
+          "price": "Contact us"
+        }
+      ]
+    }
+  },
+  {
+    "slot_key": "business-hours",
+    "component_type": "business-hours",
+    "data": {
+      "title": "Hours of Operation",
+      "hours": [
+        { "day": "Monday", "open": "6:00 AM", "close": "7:00 PM", "is_closed": false },
+        { "day": "Tuesday", "open": "6:00 AM", "close": "7:00 PM", "is_closed": false },
+        { "day": "Wednesday", "open": "6:00 AM", "close": "7:00 PM", "is_closed": false },
+        { "day": "Thursday", "open": "6:00 AM", "close": "8:00 PM", "is_closed": false },
+        { "day": "Friday", "open": "6:00 AM", "close": "9:00 PM", "is_closed": false },
+        { "day": "Saturday", "open": "7:00 AM", "close": "9:00 PM", "is_closed": false },
+        { "day": "Sunday", "open": "", "close": "", "is_closed": true }
+      ]
+    }
+  },
+  {
+    "slot_key": "contact-form",
+    "component_type": "contact-form",
+    "data": {
+      "title": "Get in Touch",
+      "subtitle": "Have a question, feedback, or want to book us for an event? Send us a message!",
+      "fields": [
+        { "type": "text", "label": "Your Name", "placeholder": "Jane Doe", "required": true },
+        { "type": "email", "label": "Email Address", "placeholder": "jane@example.com", "required": true },
+        { "type": "tel", "label": "Phone Number", "placeholder": "(555) 000-0000", "required": false },
+        { "type": "textarea", "label": "Message", "placeholder": "How can we help you?", "required": true }
+      ],
+      "submit_text": "Send Message"
+    }
+  },
+  {
+    "slot_key": "footer",
+    "component_type": "footer",
+    "data": {
+      "columns": [
+        {
+          "title": "Visit Us",
+          "links": [
+            { "label": "42 River Road", "url": "#" },
+            { "label": "Portland, OR 97201", "url": "#" },
+            { "label": "(555) 987-6543", "url": "tel:+155****6543" },
+            { "label": "hello@cafe-riverside.com", "url": "mailto:hello@cafe-riverside.com" }
+          ]
+        },
+        {
+          "title": "Quick Links",
+          "links": [
+            { "label": "Full Menu", "url": "/menu" },
+            { "label": "Order Online", "url": "/order" },
+            { "label": "Gift Cards", "url": "/gift-cards" },
+            { "label": "Careers", "url": "/careers" }
+          ]
+        },
+        {
+          "title": "Follow Us",
+          "links": [
+            { "label": "Facebook", "url": "https://facebook.com/caferiverside" },
+            { "label": "Instagram", "url": "https://instagram.com/caferiverside" },
+            { "label": "Twitter", "url": "https://twitter.com/caferiverside" }
+          ]
+        }
+      ],
+      "social_links": [
+        { "label": "Facebook", "url": "https://facebook.com/caferiverside", "icon": "FB" },
+        { "label": "Instagram", "url": "https://instagram.com/caferiverside", "icon": "IG" },
+        { "label": "Twitter", "url": "https://twitter.com/caferiverside", "icon": "TW" }
+      ],
+      "copyright": "2026 Café Riverside LLC. All rights reserved."
+    }
+  }
+]

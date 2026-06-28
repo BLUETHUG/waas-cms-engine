@@ -1,0 +1,23 @@
+{
+  "name": "waas-cms-engine-infrastructure",
+  "version": "1.0.0",
+  "description": "Platform API & Dynamic Routing Core for multi-tenant WaaS CMS",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./cloudflare-hostnames": "./cloudflare-hostnames.js",
+    "./tenant-middleware": "./tenant-middleware.js",
+    "./mock-cloudflare-server": "./mock-cloudflare-server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "express": "^4.21.0"
+  },
+  "scripts": {
+    "test": "node --test ../tests/test_infrastructure.mjs",
+    "mock-server": "node ./mock-cloudflare-server.js"
+  }
+}

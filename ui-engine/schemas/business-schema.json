@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://waas-cms.example.com/schemas/business-schema.json",
+  "title": "Small Business Template Schema",
+  "description": "Layout configuration schema for small business tenant websites in the WaaS CMS.",
+  "type": "object",
+  "required": ["layout"],
+  "properties": {
+    "layout": {
+      "type": "array",
+      "description": "Ordered array of page sections (slots).",
+      "items": {
+        "type": "object",
+        "required": ["slot_key", "component_type"],
+        "properties": {
+          "slot_key": {
+            "type": "string",
+            "description": "Unique key identifying the slot/region on the page."
+          },
+          "component_type": {
+            "type": "string",
+            "description": "Registered component type in the UI Engine registry.",
+            "enum": [
+              "hero",
+              "nav-bar",
+              "notification-banner",
+              "about-section",
+              "services-grid",
+              "business-hours",
+              "contact-form",
+              "footer"
+            ]
+          },
+          "data": {
+            "type": "object",
+            "description": "Component-specific data payload."
+          }
+        }
+      }
+    },
+    "template": {
+      "type": "string",
+      "const": "business",
+      "description": "Template identifier."
+    }
+  },
+  "definitions": {
+    "businessSlots": {
+      "description": "Slot type definitions with business-specific validation rules.",
+      "business-hours": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "required": ["hours"],
+            "properties": {
+              "title": { "type": "string" },
+              "hours": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["day"],
+                  "properties": {
+                    "day": {
+                      "type": "string",
+                      "enum": [
+                        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+                        "Saturday", "Sunday",
+                        "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
+                      ],
+                      "description": "Valid day name for business hours."
+                    },
+                    "open": { "type": "string" },
+                    "close": { "type": "string" },
+                    "is_closed": { "type": "boolean" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "contact-form": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "fields": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": ["text", "email", "tel", "textarea"]
+                    },
+                    "label": { "type": "string" },
+                    "placeholder": { "type": "string" },
+                    "required": { "type": "boolean" }
+                  },
+                  "required": ["type", "label", "required"]
+                }
+              },
+              "title": { "type": "string" },
+              "subtitle": { "type": "string" },
+              "submit_text": { "type": "string" }
+            },
+            "required": ["fields"]
+          }
+        }
+      },
+      "services-grid": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "services": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": { "type": "string" },
+                    "description": { "type": "string" },
+                    "icon": { "type": "string" },
+                    "price": {
+                      "type": "string",
+                      "pattern": "^[$€£]?\\d+(\\.\\d{2})?$",
+                      "description": "Price format: optional currency symbol followed by amount."
+                    }
+                  },
+                  "required": ["title", "description"]
+                }
+              },
+              "title": { "type": "string" }
+            },
+            "required": ["services"]
+          }
+        }
+      }
+    }
+  }
+}
